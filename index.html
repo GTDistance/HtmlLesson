@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta http-equiv="refresh" content="3;url=https://www.baidu.com"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="icon" href="https://www.ithome.com/favicon.ico">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <style>
+    div.red{
+      color: red;
+    }
+    div > p > span{
+      color: skyblue;
+    }
+    div > span{
+      color: yellow;
+    }
+    a:link{
+      color: red;
+    }
+    a:visited{
+      color: green;
+    }
+    div > p::first-letter{
+      font-size: 50px;
+    }
+
+    div > p > span::before{
+      content: '1234';
+      color: greenyellow;
+    }
+    div > p > span::after{
+      content: 'hdhhdhd';
+      color: purple;
+    }
+    .box1{
+      width: 200px;
+      height: 200px;
+      /* padding: 20px; */
+      color: red;
+      background-color: pink;
+      /* border-style: solid; */
+      /* border-color: orange; */
+    }
+    .box1::before{
+      content: "";
+      display: table;
+    }
+    .box2{
+      width: 30px;
+      height: 100px;
+      margin-left: auto;
+      background-color: yellow;
+      margin-top: 10px;
+    }
+    .s1{
+      background-color: yellow;
+      /* padding: 50px; */
+    }
+    .boxbox{
+      width: 200px;
+      height: 200px;
+      background-color: greenyellow;
+    }
+    .floatboxouter::before,
+    .floatboxouter::after{
+      content: '';
+      clear: both;
+      display: table;
+    }
+    .floatbox{
+      width: 200px;
+      height: 200px;
+      float: left;
+    }
+    .floatbox1{
+      background-color: antiquewhite;
+    } 
+    .floatbox2{
+      background-color: greenyellow;
+      float: right;
+    } 
+    .floatbox3{
+      background-color: orange;
+    }
+    .fontBox{
+      width: 300px;
+      height: 300px;
+      background-color: brown;
+    }
+    .logo{
+      width: 55px;
+      height: 55px;
+      position: relative;
+      overflow: hidden;
+      text-indent: -9999px;
+      float: left;
+      
+    }
+    .logo a{
+      width: 55px;
+      height: 55px;
+      position: absolute;
+      background-color: #ff6700;
+      background-position: center;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      left: 0;
+      transition: left 0.3s;
+    }
+    .logo .mi{
+      background-image: url('./imgs/mi.png');
+
+    }
+    .logo .home{
+      background-image: url('./imgs/home.png');
+      left: -55px;
+    }
+
+
+    .logo:hover .mi{
+      left: 55px;
+    }
+    .logo:hover .home{
+      left: 0;
+    }
+    .nav-wrapper{
+      float: left;
+    }
+    .nav-wrapper a{
+      text-decoration: none;
+    }
+    .nav-wrapper ul.nav{
+      list-style: none;
+      line-height: 100px;
+      background-color: greenyellow;
+    }
+    .nav-wrapper li{
+      float: left;
+    }
+    .nav-wrapper li a{
+      font-size: 16px;
+      margin-right: 20px;
+      display: block;
+    }
+    .clearfloat::before,
+    .clearfloat::after{
+      clear: both;
+      display: table;
+      content: '';
+    }
+    .nav-header{
+
+    }
+    .goods-info{
+
+    }
+    .clock{
+      width: 300px;
+      height: 300px;
+      background-color: blueviolet;
+      border-radius: 50%;
+      position: relative;
+      background-image: url('./imgs/clock.jpeg');
+      background-size: cover;
+    }
+    .clock > div{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .clock > div div{
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+    }
+    .clock .hour-wrapper{
+      width: 40%;
+      height: 40%;
+      animation: run 7200s linear infinite;
+    }
+    .hour-wrapper .hour{
+      width: 6px;
+      height: 50%;
+      
+      background-color: black;
+      margin: 0 auto;
+    }
+    .clock .min-wrapper{
+      width: 70%;
+      height: 70%;
+      animation: run 3600s linear infinite;
+    }
+    .min-wrapper .min{
+      width: 4px;
+      height: 50%;
+      background-color: black;
+      margin: 0 auto;
+    }
+    .clock .sec-wrapper{
+      width: 90%;
+      height: 90%;
+      animation: run 60s steps(60) infinite;
+    }
+    .sec-wrapper .sec{
+      width: 2px;
+      height: 50%;
+      background-color: red;
+      margin: 0 auto;
+    }
+
+    @keyframes run{
+      form{
+        transform: rotateZ(0);
+      }
+      to{
+        transform: rotateZ(360deg);
+      }
+    }
+
+    html{
+      perspective: 800px;
+    }
+    .cube{
+      width: 200px;
+      height: 200px;
+      background-color: #ff6700;
+      position: relative;
+      margin: 100px auto;
+      /* transform-style: preserve-3d;
+      transform: rotateX(45deg) rotateZ(45deg); */
+    }
+    .cube > div{
+      width: 200px;
+      height: 200px;
+      opacity: 0.7;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+    }
+    .cube > div img{
+      width: 200px;
+      height: 200px;
+      vertical-align: top;
+    }
+
+    .cube-box1{
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .cube-box2{
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+    .box3{
+      transform: rotateX(90deg) translateZ(100px);
+    }
+    .box4{
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+    .box5{
+      transform: rotateY(180deg) translateZ(100px);
+    }
+    .box6{
+      transform: rotateY(0deg) translateZ(100px);
+    }
+  </style>
+</head>
+<body>
+  <div class="cube">
+    <div class="cube-box1">
+      <img src="./imgs/manv/manv1.jpeg">
+    </div>
+    <div class="cube-box2">
+      <img src="./imgs/manv/manv2.jpeg">
+    </div>
+    <!-- <div class="box3">
+      <img src="./imgs/manv/manv3.jpeg">
+    </div>
+    <div class="box4">
+      <img src="./imgs/manv/manv4.jpeg">
+    </div>
+    <div class="box5">
+      <img src="./imgs/manv/manv5.jpeg">
+    </div>
+    <div class="box6">
+      <img src="./imgs/manv/manv6.jpeg">
+    </div> -->
+  </div>
+
+  <div class="clock">
+    <div class="hour-wrapper" >
+      <div class="hour" ></div>
+    </div>
+    <div class="min-wrapper" >
+      <div class="min" ></div>
+    </div>
+    <div class="sec-wrapper" >
+      <div class="sec" ></div>
+    </div>
+  </div>
+
+  
+
+  <div class="floatboxouter">
+    <div class="floatbox floatbox1"></div>
+    <div class="floatbox floatbox2"></div>
+    <div class="floatbox floatbox3"></div>
+  </div>
+  
+ 
+  <div class="nav-header clearfloat">
+    <h1 class="logo" title="小米">
+      小米官网
+      <a href="javascript:;" class="home">
+  
+      </a>
+      <a href="javascript:;" class="mi"></a>
+    </h1>
+  
+    <div class="nav-wrapper clearfloat">
+      <ul class="nav clearfloat">
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <li><a href="#">手机</a></li>
+        <div class="goods-info"></div>
+      </ul>
+    </div>
+  </div>
+  
+  <form action=""  autocomplete="on">
+    <input type="text">
+  </form>
+  
+  
+  <div class="boxbox"></div>
+  <span class="s1">我是span标签</span>
+  <div class="fontBox">
+    <i class="fa fa-film" style="font-size: 80px;color: yellowgreen;"></i>
+  </div>
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+  <div class="red">选择器来测试啊</div>
+  <div ><p>选择器来测试啊</p></div>
+  <div>
+    <p>
+      还是一个优秀的人啊
+      <span>我很优秀哟</span>
+    </p>
+    <span>我就是这样
+      <span>你能把我怎么样，哼</span>
+    </span>
+  </div>
+  <a href="https://www.baidu.com">百度</a>
+  <hgroup>
+    <h1>回乡偶书</h1>
+    <h2>其一</h2>
+    <h3>贺知章</h3>
+  </hgroup>
+  <p>少小离家老大回</p>
+  <p>乡音无改鬓毛衰</p>
+  <p>儿童相见不相识</p>
+  <p>笑问客从何处来</p>
+  <a href="#footer">去到底部</a>
+  <p>天气<em>真</em>好啊</p>
+  <p>要完成作业<strong>作业</strong></p>
+  <p>
+    子曰：
+    <blockquote>
+      刚、毅、木、讷近于仁
+    </blockquote>
+  </p>
+  <p>子曰：<q>近者悦，远着来</q></p>
+  <p>
+    <h1>我就是这么优秀</h1>
+  </p>
+
+  <audio controls>
+    ahahahhaha
+    <source src="">
+  </audio>
+  <video controls>
+    <!-- <source src="https://player.youku.com/embed/XNTE3MDAwNzc1Mg=="> -->
+  </vedio>
+  <!-- <iframe height=498 width=510 src='https://player.youku.com/embed/XNTE3MDAwNzc1Mg==' frameborder=0 'allowfullscreen'></iframe> -->
+  <a href="#" id="footer">
+    <div>回到顶部</div>
+  </a>
+  
+  <!-- 占位符  -->
+  <a href="javascript:;">占位符</a>
+</body>
+</html>
